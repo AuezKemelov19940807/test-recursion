@@ -1,0 +1,29 @@
+ul {
+  list-style: none;
+}
+
+li.has-children > ul {
+  display: none;
+}
+
+.has-children::before {
+  content: '\27A7';
+  color: blue;
+  margin-right: 5px;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+li.active::before {
+  transform: rotate(90deg);
+  transition: all 0.3s ease;
+}
+
+li {
+  cursor: pointer;
+  user-select: none;
+}
+
+li > ul.active {
+  display: block;
+}
